@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-// const URL = "mongodb+srv://mehulmayavanshi953:OsXIqS1mzjmmkEJN@cluster0.ps9etta.mongodb.net/?retryWrites=true&w=majority";
-const URL =
-  "mongodb+srv://mehulmayavanshi953:OsXIqS1mzjmmkEJN@cluster0.ps9etta.mongodb.net/?retryWrites=true&w=majority";
+const URL = process.env.DB_URL;
+
 
 module.exports = () => {
   return mongoose
