@@ -1,6 +1,6 @@
 
 // const cors = require("cors");
-const PORT = 5000 || process.env.PORT;
+const PORT =  process.env.PORT || 5000;
 
 module.exports =  async (app)=>{
 
@@ -10,7 +10,7 @@ module.exports =  async (app)=>{
     
     require("./routes.startup")(app);
 
-    require("./multer.startup")
+    require("./multer.startup") 
 
 
     
