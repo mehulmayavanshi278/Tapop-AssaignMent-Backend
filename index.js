@@ -9,7 +9,8 @@ const path = require("path");
 
 
 
-app.use(express.static(path.join(__dirname,"/public/Images")));
+// app.use(express.static(path.join(__dirname,"/public/Images")));
+app.use(express.static("public/Images"));
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json())
