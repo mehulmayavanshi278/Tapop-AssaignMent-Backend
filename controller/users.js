@@ -21,6 +21,7 @@ class userController {
     } catch (err) {
       console.log(err);
     }
+    
   };
 
   create = async (req, res) => {
@@ -34,14 +35,12 @@ class userController {
     if (checkuser) {
       return res.status(200).send("user alrready exist");
     }
-    const img = req.files.map((elm) => {
-      return elm.path;
-    });
-    //  console.log(img)
-    const profilePhoto = img[0] ? await uploadToCloudinary(img[0]) : undefined;
-    const coverPhoto = img[1] ? await uploadToCloudinary(img[1]) : undefined;
-    // console.log(profilePhoto);
-    // console.log(coverPhoto);
+    console.log(req?.files);
+
+    const profilePhoto = req?.files?.profilePhoto ? await uploadToCloudinary(req?.files?.profilePhoto?.tempFilePath) : undefined;
+    const coverPhoto = req?.files?.coverPhoto ? await uploadToCloudinary(req?.files?.coverPhoto?.tempFilePath) : undefined;
+    console.log(profilePhoto);
+    console.log(coverPhoto);
     console.log(password);
 
     let newUser = { name, email, password, gender, profilePhoto, coverPhoto };
@@ -78,11 +77,12 @@ class userController {
       //   return elm.path
       // })
       //  console.log(img)
+      console.log(req?.files);
       const profilePhoto = req?.files?.profilePhoto
-        ? await uploadToCloudinary(req?.files?.profilePhoto[0]["path"])
+        ? await uploadToCloudinary(req?.files?.profilePhoto?.tempFilePath)
         : undefined;
       const coverPhoto = req?.files?.coverPhoto
-        ? await uploadToCloudinary(req?.files?.coverPhoto[0]["path"])
+        ? await uploadToCloudinary(req?.files?.coverPhoto?.tempFilePath)
         : undefined;
 
       let { name, email, phoneNo } = req.body;
