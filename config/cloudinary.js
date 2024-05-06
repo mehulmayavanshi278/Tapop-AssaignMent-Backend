@@ -10,16 +10,21 @@ cloudinary.config({
 
 // Function to upload an image to Cloudinary
 function uploadToCloudinary(imagePath) {
-    return new Promise((resolve, reject) => {
-        // Upload image to Cloudinary
-        cloudinary.uploader.upload(imagePath, (error, result) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(result?.url);
-            }
+    try{
+        return new Promise((resolve, reject) => {
+            // Upload image to Cloudinary
+            cloudinary.uploader.upload(imagePath, (error, result) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(result?.url);
+                }
+            });
         });
-    });
+    }catch(err){
+        console.log(err);
+    }
+
 }
 
 // Array of image file paths you want to upload
