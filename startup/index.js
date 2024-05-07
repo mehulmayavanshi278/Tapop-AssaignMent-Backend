@@ -1,16 +1,19 @@
 
 // const cors = require("cors");
-const PORT =  process.env.PORT || 5000;
+
 
 module.exports =  async (app)=>{
+    const PORT =  process.env.PORT || 5000;
 
     await require("./db.startup")();
 
    
     
-    require("./routes.startup")(app);
+
 
     require("./multer.startup") 
+
+    require("./routes.startup")(app);
 
 
     
