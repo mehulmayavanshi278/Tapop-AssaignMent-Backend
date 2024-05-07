@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const http = require("http");
-// const bodyParser=require('body-parser');
+const bodyParser=require('body-parser');
 const fileUpload = require("express-fileupload")
 const app = express();
 const path = require("path");
