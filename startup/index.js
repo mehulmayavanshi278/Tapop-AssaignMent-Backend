@@ -3,8 +3,8 @@
 
 
 module.exports =  async (app)=>{
-    const PORT =  process.env.PORT || 5000;
-    console.log(PORT)
+    const PORT =  process.env.PORT;
+    console.log("port is:" , PORT)
 
     await require("./db.startup")();
 
