@@ -21,10 +21,7 @@ app.use(cors({
   // preflightContinue: true,
   // optionsSuccessStatus: 204,
 }));
-app.use((req , res , next)=>{
-  res.setHeader('Access-Control-Allow-Origin' , '*');
-  next();
-})
+app.options('*', cors());
 
 // app.use(bodyParser.json())
 app.use( bodyParser.urlencoded({extended: true }));
