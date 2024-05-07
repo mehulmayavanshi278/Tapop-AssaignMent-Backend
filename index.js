@@ -4,7 +4,7 @@ const cors = require("cors");
 const http = require("http");
 const bodyParser=require('body-parser');
 const fileUpload = require("express-fileupload")
-const app = new express();
+const app = express();
 const path = require("path");
 
 
