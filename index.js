@@ -13,8 +13,9 @@ const path = require("path");
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors({
-  // origin:"http://localhost:3000"
-   origin :"https://tapop-assaign-ment-frontend.vercel.app"
+  origin: "https://tapop-assaign-ment-frontend.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"] // Allowed request headers
 }));
 app.use(bodyParser.json())
 // app.use( bodyParser.urlencoded({extended: true }));
