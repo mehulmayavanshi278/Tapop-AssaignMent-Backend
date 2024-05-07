@@ -2,11 +2,14 @@ const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
 
 // Configure Cloudinary with your Cloudinary credentials
-cloudinary.config({
+ module.exports =  ()=>{
+  cloudinary.config({
     cloud_name: process.env.cloud_name,
     api_key: process.env.api_key,
     api_secret: process.env.api_secret
 });
+}
+
 
 // Function to upload an image to Cloudinary
 function uploadToCloudinary(imagePath) {

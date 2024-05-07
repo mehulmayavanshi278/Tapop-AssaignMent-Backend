@@ -13,6 +13,7 @@ module.exports =  async (app)=>{
 
 
     require("./multer.startup") 
+    require("../config/cloudinary")
 
     require("./routes.startup")(app);
 
