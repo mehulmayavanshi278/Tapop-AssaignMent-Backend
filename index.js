@@ -13,12 +13,13 @@ const path = require("path");
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors({
-  origin: "https://tapop-assaign-ment-frontend.vercel.app",
+  // origin: "https://tapop-assaign-ment-frontend.vercel.app",
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed request headers
-  credentials: true,
-  preflightContinue: true,
-  optionsSuccessStatus: 204,
+  // credentials: true,
+  // preflightContinue: true,
+  // optionsSuccessStatus: 204,
 }));
 
 // app.use(bodyParser.json())
