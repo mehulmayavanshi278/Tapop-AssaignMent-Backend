@@ -6,6 +6,7 @@ const bodyParser=require('body-parser');
 const fileUpload = require("express-fileupload")
 const app = express();
 const path = require("path");
+require("./middlewares/allowcors");
 
 
 
