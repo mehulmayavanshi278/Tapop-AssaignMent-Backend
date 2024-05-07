@@ -89,6 +89,7 @@ class userController {
       let body = { name, email, profilePhoto, coverPhoto, phoneNo };
 
       await userServices.findByIdAndUpdate(id, body);
+      res.setHeader('Access-Control-Allow-Origin', 'https://tapop-assaign-ment-frontend.vercel.app/')
       return res.status(200).send("updated successfully");
     } catch (err) {
       console.log(err);
