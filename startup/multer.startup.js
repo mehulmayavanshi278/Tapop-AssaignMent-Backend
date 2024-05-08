@@ -17,6 +17,6 @@ const upload = multer({
 });
 
 
-
+console.log("multer setup ready");
 
 module.exports = upload;

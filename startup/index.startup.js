@@ -1,9 +1,10 @@
 
 // const cors = require("cors");
-
+const cloudinary = require('cloudinary').v2;
+const fs = require('fs');
 
 module.exports =  async (app)=>{
-    const PORT =  process.env.PORT;
+    const PORT =  process.env.PORT || 5000;
     console.log("port is:" , PORT)
 
     await require("./db.startup")();
@@ -13,7 +14,15 @@ module.exports =  async (app)=>{
 
 
     require("./multer.startup") 
-    require("../config/cloudinary")
+
+  
+   
+    console.log("cloudinary setup ready");
+    cloudinary.config({
+      cloud_name: process.env.cloud_name,
+      api_key: process.env.api_key,
+      api_secret: process.env.api_secret
+  });
 
     require("./routes.startup")(app);
 
