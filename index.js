@@ -9,6 +9,15 @@ const path = require("path");
 require("./middlewares/allowcors");
 
 
+const fs = require('fs');
+
+const directory = '/var/task/tmp';
+
+// Create directory if it doesn't exist
+if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory, { recursive: true });
+}
+
 
 // app.use(express.static(path.join(__dirname,"/public/Images")));
 app.use(express.static("public"));
