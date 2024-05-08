@@ -1,10 +1,17 @@
 const multer = require("multer");
+const fs = require('fs');
 
 
+const uploadDirectory = "var/task/tmp";
+
+// Check if the upload directory exists, create it if not
+if (!fs.existsSync(uploadDirectory)) {
+    fs.mkdirSync(uploadDirectory);
+}
 
 const storage = multer.diskStorage({
     destination:function(req, file,cb){
-        return cb(null , "public");
+        return cb(null , "var/task/tmp");
     },
     filename:function(req,file,cb){
         return cb(null , `${Date.now()}_${file.originalname}`)
