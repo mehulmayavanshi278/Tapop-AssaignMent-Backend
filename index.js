@@ -7,9 +7,12 @@ const fileUpload = require("express-fileupload")
 const app = express();
 const path = require("path");
 require("./middlewares/allowcors");
+const fs = require("fs");
 
 const tempUploadDirectory = '/var/task/tmp';
-
+// if (!fs.existsSync(tempUploadDirectory)) {
+//   fs.mkdirSync(tempUploadDirectory);
+// }
 
 
 
